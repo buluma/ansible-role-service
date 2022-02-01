@@ -16,8 +16,6 @@ molecule:
   retry: 1
   parallel:
     matrix:
-      - image: "debian"
-        tag: "bullseye"
       - image: "fedora"
         tag: "latest"
 

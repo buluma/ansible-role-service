@@ -33,8 +33,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "debian"   # TODO expand build list
-            tag: "bullseye"
           - image: "fedora"
             tag: "latest"
     steps:
