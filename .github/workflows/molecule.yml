@@ -34,6 +34,8 @@ jobs:
       matrix:
         config:
           - image: "debian"   # TODO expand build list
+            tag: "bullseye"
+          - image: "fedora"
             tag: "latest"
     steps:
       - name: checkout

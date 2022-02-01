@@ -18,6 +18,8 @@ molecule:
     matrix:
       - image: "debian"
         tag: "latest"
+      - image: "fedora"
+        tag: "latest"
 
 galaxy:
   script:
