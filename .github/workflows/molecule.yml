@@ -35,6 +35,7 @@ jobs:
         config:
           - image: "fedora"
             tag: "latest"
+
     steps:
       - name: checkout
         uses: actions/checkout@v2
