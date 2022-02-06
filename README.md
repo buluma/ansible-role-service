@@ -4,7 +4,7 @@ Add custom services to your Linux system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-service/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-service/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-service/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-service)|[![Ansible Quality Score](https://img.shields.io/ansible/quality/57863)](https://galaxy.ansible.com/buluma/mount)|[![Ansible Role](https://img.shields.io/ansible/role/d/57863)](https://galaxy.ansible.com/buluma/mount)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/releases/)|
+|[![github](https://github.com/buluma/ansible-role-service/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-service/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-service/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-service)|[![quality](https://img.shields.io/ansible/quality/57862)](https://galaxy.ansible.com/buluma/service)|[![downloads](https://img.shields.io/ansible/role/d/57862)](https://galaxy.ansible.com/buluma/service)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -172,4 +172,4 @@ Apache-2.0
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.co.ke/)
+[Michael Buluma](https://buluma.github.io/)
