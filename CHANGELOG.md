@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-service/tree/HEAD)
+## [1.0.4](https://github.com/buluma/ansible-role-service/tree/1.0.4) (2022-05-13)
 
-[Full Changelog](https://github.com/buluma/ansible-role-service/compare/1.0.3...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-service/compare/1.0.3...1.0.4)
 
 **Merged pull requests:**
 
