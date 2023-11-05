@@ -2,9 +2,9 @@
 
 Add custom services to your Linux system.
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-service/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-service/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-service/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-service)|[![quality](https://img.shields.io/ansible/quality/57862)](https://galaxy.ansible.com/buluma/service)|[![downloads](https://img.shields.io/ansible/role/d/57862)](https://galaxy.ansible.com/buluma/service)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-service/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-service/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-service/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-service)|[![downloads](https://img.shields.io/ansible/role/d/4834)](https://galaxy.ansible.com/buluma/service)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
