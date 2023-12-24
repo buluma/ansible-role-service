@@ -1,10 +1,10 @@
-# [Ansible role service](#service)
+# Ansible role [service](https://galaxy.ansible.com/ui/standalone/roles/buluma/service/documentation)
 
 Add custom services to your Linux system.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-service/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-service/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-service/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-service/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-service.svg)](https://github.com/buluma/ansible-role-service/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/service)](https://galaxy.ansible.com/ui/standalone/roles/buluma/service/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -175,13 +175,11 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-service/blob/master/LICENSE).
+[Apache-2.0](https://github.com/buluma/ansible-role-service/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)
