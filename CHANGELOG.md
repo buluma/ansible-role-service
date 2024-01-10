@@ -2,6 +2,14 @@
 
 ## [1.1.0](https://github.com/buluma/ansible-role-service/tree/1.1.0) (2024-01-02)
 
+[Full Changelog](https://github.com/buluma/ansible-role-service/compare/1.1.0...HEAD)
+
+**Implemented enhancements:**
+
+- Configure Renovate [\#17](https://github.com/buluma/ansible-role-service/pull/17) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [1.1.0](https://github.com/buluma/ansible-role-service/tree/1.1.0) (2024-01-02)
+
 [Full Changelog](https://github.com/buluma/ansible-role-service/compare/1.0.7...1.1.0)
 
 **Closed issues:**
