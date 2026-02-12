@@ -5,4 +5,4 @@
 repository:
   description: Add custom services to your Linux system.
   homepage: https://buluma.github.io/
-  topics: service, ansible, molecule, tox, playbook
+  topics: service, ansible, molecule, playbook
