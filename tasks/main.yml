@@ -46,8 +46,7 @@
   loop_control:
     label: "{{ item.name }}"
   when:
-    - item.state is defined or
-      item.enabled is defined
+    - item.state is defined or item.enabled is defined
 
 - name: Flush handlers
   ansible.builtin.meta: flush_handlers
