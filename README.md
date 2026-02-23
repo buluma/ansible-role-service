@@ -12,84 +12,86 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- name: Converge
-  hosts: all
-  become: true
-  gather_facts: true
+  - name: Converge
+    hosts: all
+    become: true
+    gather_facts: true
 
-  vars:
-    _service_test_command:
-      default: /usr/bin/sleep
-      Alpine: /bin/sleep
-      Debian: /bin/sleep
-      Ubuntu-16: /bin/sleep
-      Ubuntu-18: /bin/sleep
-    service_test_command: "{{ _service_test_command[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_service_test_command[ansible_os_family] | default(_service_test_command['default'])) }}"  # noqa 204 Just long.
+    vars:
+      _service_test_command:
+        default: /usr/bin/sleep
+        Alpine: /bin/sleep
+        Debian: /bin/sleep
+        Ubuntu-16: /bin/sleep
+        Ubuntu-18: /bin/sleep
+      service_test_command: "{{ _service_test_command[ansible_distribution ~ '-' ~
+        ansible_distribution_major_version] | default(_service_test_command[ansible_os_family]
+        | default(_service_test_command['default'])) }}"                                                                                                                                                                  # noqa 204 Just long.
 
-  roles:
-    - role: buluma.service
-      service_list:
-        - name: simple-service
-          description: Simple Service
-          start_command: "{{ service_test_command }} 3600"
-          state: started
-          enabled: true
-        - name: stopped-service
-          description: Simple Service
-          start_command: "{{ service_test_command }} 3601"
-          state: stopped
-          enabled: false
-        - name: specific-stop-service
-          description: Specific Stop Service
-          start_command: "{{ service_test_command }} 1440"
-          stop_command: /usr/bin/killall -f "sleep 1440"
-        - name: specific-user-group-service
-          description: Specific User Group Service
-          start_command: "{{ service_test_command }} 28800"
-          user_name: root
-          group_name: root
-        - name: specific-workingdirectory-service
-          description: Specific WorkingDirectory Service
-          start_command: "{{ service_test_command }} 57600"
-          working_directory: /tmp
-        - name: specific-pattern-service
-          description: Specific Status Pattern Service
-          start_command: "{{ service_test_command }} 115200"
-          status_pattern: 115200
-        - name: variable-service
-          description: Service with environment variables
-          start_command: "{{ service_test_command }} ${time}"
-          environment_variables:
-            time: 230400
-        - name: pidfile-service
-          description: Service with pidfile
-          start_command: "{{ service_test_command }} 460800"
-          pidfile: /var/run/pidfile-service.pid
-        - name: environmentfile-service
-          description: Service with environmentfile
-          start_command: "{{ service_test_command }} 921600"
-          environmentfile: /environmentfile.txt
+    roles:
+      - role: buluma.service
+        service_list:
+          - name: simple-service
+            description: Simple Service
+            start_command: "{{ service_test_command }} 3600"
+            state: started
+            enabled: true
+          - name: stopped-service
+            description: Simple Service
+            start_command: "{{ service_test_command }} 3601"
+            state: stopped
+            enabled: false
+          - name: specific-stop-service
+            description: Specific Stop Service
+            start_command: "{{ service_test_command }} 1440"
+            stop_command: /usr/bin/killall -f "sleep 1440"
+          - name: specific-user-group-service
+            description: Specific User Group Service
+            start_command: "{{ service_test_command }} 28800"
+            user_name: root
+            group_name: root
+          - name: specific-workingdirectory-service
+            description: Specific WorkingDirectory Service
+            start_command: "{{ service_test_command }} 57600"
+            working_directory: /tmp
+          - name: specific-pattern-service
+            description: Specific Status Pattern Service
+            start_command: "{{ service_test_command }} 115200"
+            status_pattern: 115200
+          - name: variable-service
+            description: Service with environment variables
+            start_command: "{{ service_test_command }} ${time}"
+            environment_variables:
+              time: 230400
+          - name: pidfile-service
+            description: Service with pidfile
+            start_command: "{{ service_test_command }} 460800"
+            pidfile: /var/run/pidfile-service.pid
+          - name: environmentfile-service
+            description: Service with environmentfile
+            start_command: "{{ service_test_command }} 921600"
+            environmentfile: /environmentfile.txt
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-service/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-- name: Prepare
-  hosts: all
-  gather_facts: false
-  become: true
-  serial: 30%
+  - name: Prepare
+    hosts: all
+    gather_facts: false
+    become: true
+    serial: 30%
 
-  roles:
-    - role: buluma.bootstrap
+    roles:
+      - role: buluma.bootstrap
 
-  post_tasks:
-    - name: place /environmentfile.txt
-      ansible.builtin.copy:
-        content: "value=variable"
-        dest: /environmentfile.txt
-        mode: "0644"
+    post_tasks:
+      - name: place /environmentfile.txt
+        ansible.builtin.copy:
+          content: "value=variable"
+          dest: /environmentfile.txt
+          mode: "0644"
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
