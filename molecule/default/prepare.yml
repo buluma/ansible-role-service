@@ -6,11 +6,11 @@
   serial: 30%
 
   roles:
-  - role: buluma.bootstrap
+    - role: buluma.bootstrap
 
   post_tasks:
-  - name: place /environmentfile.txt
-    ansible.builtin.copy:
-      content: "value=variable"
-      dest: /environmentfile.txt
-      mode: "0644"
+    - name: place /environmentfile.txt
+      ansible.builtin.copy:
+        content: "value=variable"
+        dest: /environmentfile.txt
+        mode: "0644"
