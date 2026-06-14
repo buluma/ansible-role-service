@@ -19,7 +19,7 @@
     dest: "/etc/systemd/system/{{ item.name }}.service"
     mode: "0644"
   when:
-    - ansible_facts.service_mgr == "systemd"
+    - ansible_facts['service_mgr'] == "systemd"
   notify:
     - Systemctl daemon-reload
   loop: "{{ service_list }}"
@@ -32,7 +32,7 @@
     dest: "/etc/init.d/{{ item.name }}"
     mode: "0755"
   when:
-    - ansible_facts.service_mgr in [ "sysvinit", "upstart", "openrc" ]
+    - ansible_facts['service_mgr'] in [ "sysvinit", "upstart", "openrc" ]
   loop: "{{ service_list }}"
   loop_control:
     label: "{{ item.name }}"
