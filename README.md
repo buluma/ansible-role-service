@@ -25,8 +25,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
       Ubuntu-16: /bin/sleep
       Ubuntu-18: /bin/sleep
     service_test_command:
-      "{{ _service_test_command[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-      | default(_service_test_command[ansible_os_family] | default(_service_test_command['default']))
+      "{{ _service_test_command[ansible_facts['distribution'] ~ '-' ~ ansible_facts['distribution_major_version']]
+      | default(_service_test_command[ansible_facts['os_family']] | default(_service_test_command['default']))
       }}" # noqa 204 Just long.
 
   roles:
@@ -80,19 +80,18 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  gather_facts: false
   become: true
-  serial: 30%
+  gather_facts: false
+
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo"
+      become: false
+      changed_when: false
+      failed_when: false
 
   roles:
     - role: buluma.bootstrap
-
-  post_tasks:
-    - name: place /environmentfile.txt
-      ansible.builtin.copy:
-        content: "value=variable"
-        dest: /environmentfile.txt
-        mode: "0644"
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -153,14 +152,14 @@ Here is an overview of related roles:
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|all|
-|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
-|[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
-|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done on:
 
@@ -178,6 +177,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-### Get Help
-- Report issues: https://github.com/buluma/ansible-role-service/issues/new
-- See docs: https://docs.ansible.com/collection/gallery/ansible-role-service
